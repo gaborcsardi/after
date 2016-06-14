@@ -3,8 +3,9 @@ Title: Run Code in the Background
 Version: 1.0.0
 Author: Gábor Csárdi, Philippe Grosjean
 Maintainer: Gábor Csárdi <csardi.gabor@gmail.com>
-Description: Run an R function in the background, possibly after a delay. The current
-  version uses the Tcl event loop and was ported from the 'tcltk2' package.
+Description: Run an R function in the background, possibly after a delay.
+    The current version uses the Tcl event loop and was ported from the
+    'tcltk2' package.
 License: LGPL-3
 LazyData: true
 URL: https://github.com/gaborcsardi/bg
@@ -12,3 +13,4 @@ BugReports: https://github.com/gaborcsardi/bg/issues
 RoxygenNote: 5.0.1
 Suggests: 
     testthat
+Encoding: UTF-8
