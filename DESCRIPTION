@@ -11,6 +11,8 @@ LazyData: true
 URL: https://github.com/gaborcsardi/after
 BugReports: https://github.com/gaborcsardi/after/issues
 RoxygenNote: 5.0.1
+Imports:
+    tcltk
 Suggests: 
     testthat
 Encoding: UTF-8
