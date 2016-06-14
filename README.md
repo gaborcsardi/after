@@ -39,18 +39,24 @@ anonymous function for this:
 after(5000, function() utils::alarm())
 ```
 
-Re-schedule a function, and run it every five seconds:
+Run a function every three seconds:
 
 ```r
-fun <- function(run = TRUE) {
-  print(Sys.time())
-  after(5000, fun)
-  }
-fun(run = FALSE)
+id <- after(3000, function() cat("Still here!\n"), redo = Inf)
+Sys.sleep(10)
+```
+
+```
+Still here!
+Still here!
+Still here!
 ```
 
 Cancel it:
 
+```r
+after$cancel(id)
+```
 
 ## License
 
