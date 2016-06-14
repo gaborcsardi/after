@@ -1,7 +1,7 @@
 Package: after
 Title: Run Code in the Background
 Version: 1.0.0
-Author: Gábor Csárdi, Philippe Grosjean
+Author: Gábor Csárdi
 Maintainer: Gábor Csárdi <csardi.gabor@gmail.com>
 Description: Run an R function in the background, possibly after a delay.
     The current version uses the Tcl event loop and was ported from the

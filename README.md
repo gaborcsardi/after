@@ -29,4 +29,4 @@ library(after)
 
 ## License
 
-LGPL-3 © Philippe Grosjean, Gábor Csárdi
+LGPL-3 © Gábor Csárdi
