@@ -1,4 +1,4 @@
 library(testthat)
-library(bg)
+library(after)
 
-test_check("bg")
+test_check("after")

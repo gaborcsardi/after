@@ -8,14 +8,14 @@ knitr::opts_chunk$set(
   fig.height = 8)
 ```
 
-# bg
+# after
 
 > Run Code in the Background
 
-[![Linux Build Status](https://travis-ci.org/gaborcsardi/bg.svg?branch=master)](https://travis-ci.org/gaborcsardi/bg)
-[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/gaborcsardi/bg?svg=true)](https://ci.appveyor.com/project/gaborcsardi/bg)
-[![](http://www.r-pkg.org/badges/version/bg)](http://www.r-pkg.org/pkg/bg)
-[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/bg)](http://www.r-pkg.org/pkg/bg)
+[![Linux Build Status](https://travis-ci.org/gaborcsardi/after.svg?branch=master)](https://travis-ci.org/gaborcsardi/after)
+[![Windows Build status](https://ci.appveyor.com/api/projects/status/github/gaborcsardi/after?svg=true)](https://ci.appveyor.com/project/gaborcsardi/after)
+[![](http://www.r-pkg.org/badges/version/after)](http://www.r-pkg.org/pkg/after)
+[![CRAN RStudio mirror downloads](http://cranlogs.r-pkg.org/badges/after)](http://www.r-pkg.org/pkg/after)
 
 Run an R function in the background, possibly after a delay. The current
 version uses the Tcl event loop and was ported from the 'tcltk2' package.
@@ -23,13 +23,13 @@ version uses the Tcl event loop and was ported from the 'tcltk2' package.
 ## Installation
 
 ```{r eval = FALSE}
-source("https://install-github.me/gaborcsardi/bg")
+source("https://install-github.me/gaborcsardi/after")
 ```
 
 ## Usage
 
 ```{r}
-library(bg)
+library(after)
 ```
 
 ## License

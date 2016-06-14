@@ -1,4 +1,4 @@
-Package: bg
+Package: after
 Title: Run Code in the Background
 Version: 1.0.0
 Author: Gábor Csárdi, Philippe Grosjean
@@ -8,8 +8,8 @@ Description: Run an R function in the background, possibly after a delay.
     'tcltk2' package.
 License: LGPL-3
 LazyData: true
-URL: https://github.com/gaborcsardi/bg
-BugReports: https://github.com/gaborcsardi/bg/issues
+URL: https://github.com/gaborcsardi/after
+BugReports: https://github.com/gaborcsardi/after/issues
 RoxygenNote: 5.0.1
 Suggests: 
     testthat

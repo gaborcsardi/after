@@ -5,5 +5,10 @@
 #' version uses the Tcl event loop and was ported from the 'tcltk2' package.
 #'
 #' @docType package
-#' @name bg
+#' @name after
 NULL
+
+after <- function(fun, wait) {
+
+}
+
