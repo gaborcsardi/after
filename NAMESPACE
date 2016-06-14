@@ -2,6 +2,6 @@
 
 S3method("$",after_package)
 S3method(names,after_package)
+S3method(print,after_task)
 export(after)
-importFrom(tcltk,is.tclObj)
 importFrom(tcltk,tcl)

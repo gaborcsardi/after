@@ -7,12 +7,12 @@
 \alias{after$list}
 \title{Run Code in the Background}
 \usage{
-after(ms, fun, args = list())
+after(ms, fun, args = list(), redo = 0)
 
 ## task <- after(ms, fun, args = list())
-## after$cancel(task)
 ## after$info(task)
 ## after$list()
+## after$cancel(task)
 }
 \arguments{
 \item{ms}{Amount of time to wait before running the function, in
@@ -26,7 +26,12 @@ from packages directly. See the examples below.}
 runs in the global environment, it does not have access to the objects
 in the calling environment. But you can pass arguments to it here.}
 
-\item{task}{Task id, as returned by \code{after()}.}
+\item{redo}{How many times to re-run the function. Zero means running
+it only once, and \code{Inf} means re-running it continuously, until
+the R session is closed, the task is canceled, or the \code{after}
+package is unloaded.}
+
+\item{task}{Task id.}
 }
 \value{
 A task id that you can use in \code{after$info} and
@@ -35,7 +40,7 @@ A task id that you can use in \code{after$info} and
 \description{
 Run an R function in the background, possibly after a delay. The current
 version uses the Tcl event loop. It was inspired by similar
-functionality in the \code{tcltk} package.
+functionality in the \code{tcltk2} package.
 }
 \details{
 Note that this does not mean parallelism. The scheduled function runs
@@ -50,15 +55,11 @@ for interactive use.
 \section{Additional methods}{
 
 
+\code{after$info(task)} will display some information about the task.
+
 \code{after$list()} lists all scheduled tasks.
 
-\code{after$info(task)} will display some information about the task.
-Currently this is only useful to decide if the task has been executed
-already: if this happened then \code{after$info()} will throw an error.
-
-\code{after$cancel(task)} cancels a task. It is a good idea to
-put it in a \code{tryCatch} block, since it will fail for tasks that
-already completed.
+\code{after$cancel(task)} cancels a task.
 }
 \examples{
 
@@ -76,5 +77,15 @@ rm(x)
 after(1000, function() utils::alarm())
 # in case utils::alarm() uses other functions from the
 # utils package.
+
+# repeat a task
+x <- after(1000, function() print("still here"), redo = 5)
+Sys.sleep(3)
+
+# list tasks
+after$list()
+
+# cancel a task
+after$cancel(x)
 }
 
