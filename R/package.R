@@ -162,37 +162,31 @@ names.after_package <- function(x) {
   names(after_functions)
 }
 
-after_cancel <- function(id) {
-  id <- task_id(id)
-  x <- tryCatch(
-    {
-      task <- get(id, envir = after_tasks)
-      rm(list = id, envir = after_tasks)
-      tcl("after", "cancel", task$tcl_id)
-    },
-    error = function(e) e
-  )
-  invisible(x)
-}
-
-after_info <- function(id) {
-  id <- task_id(id)
-  get(id, envir = after_tasks)
-}
-
-after_list <- function() {
-  ids <- ls(after_tasks)
-  mget(ids, envir = after_tasks)
-}
-
 after_functions <- list(
-  "cancel" = after_cancel,
-  "info" = after_info,
-  "list" = after_list
+  "cancel" = function(id) {
+    id <- task_id(id)
+    x <- tryCatch(
+      {
+        task <- get(id, envir = after_tasks)
+        rm(list = id, envir = after_tasks)
+        tcl("after", "cancel", task$tcl_id)
+      },
+      error = function(e) e
+    )
+    invisible(x)
+  },
+  "info" = function(id) {
+    id <- task_id(id)
+    get(id, envir = after_tasks)
+  },
+  "list" = function() {
+    ids <- ls(after_tasks)
+    mget(ids, envir = after_tasks)
+  }
 )
 
 cancel_all_tasks <- function() {
-  lapply(ls(after_tasks), after_cancel)
+  lapply(ls(after_tasks), after_functions[["cancel"]])
 }
 
 task_id <- function(id) {
