@@ -138,7 +138,7 @@ print.after_task <- function(x, ...) {
   cat(
     sep = "",
     "Task ", x$id, "\n",
-    "  sheduled: ", format(x$scheduled), "\n",
+    "  scheduled: ", format(x$scheduled), "\n",
     "  last: ", format(x$last_run), "\n",
     "  redo: ", x$redo, "\n"
   )
